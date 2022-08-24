@@ -1,14 +1,14 @@
-const Krion = artifacts.require('Krion');
+const KrionNFT = artifacts.require('KrionNFT');
 
-contract('Kroin', accounts => {
+contract('KroinNFT', accounts => {
 
     let contract
 
     beforeEach(async() => {
-        contract = await Krion.deployed()
+        contract = await KrionNFT.deployed()
     })
 
-    describe('Deploys Token Contract', async () => {
+    describe('Deploys NFT Contract', async () => {
         it('deploys successfuly', async() => {
             const address = contract.address
 
@@ -17,13 +17,13 @@ contract('Kroin', accounts => {
             assert.notEqual(address, undefined)
             assert.notEqual(address, 0x0)
         })
-        it('has the correct name', async () => {
+        it('has the coreect name', async () => {
             const name = await contract.name()
-            assert.equal(name, 'Krion')
+            assert.equal(name, 'KrionNFT')
         })
-        it('has the correct symbol', async () => {
+        it('has the coreect symbol', async () => {
             const symbol = await contract.symbol()
-            assert.equal(symbol, 'KRI')
+            assert.equal(symbol, 'KFT')
         })
     })
 
