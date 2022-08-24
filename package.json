@@ -1,0 +1,25 @@
+{
+  "name": "nft_n_erc20",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShivangMitra/NFT_n_ERC20.git"
+  },
+  "author": "ShivangMitra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShivangMitra/NFT_n_ERC20/issues"
+  },
+  "homepage": "https://github.com/ShivangMitra/NFT_n_ERC20#readme",
+  "devDependencies": {
+    "openzeppelin-solidity": "^4.6.0"
+  }
+}
