@@ -27,11 +27,17 @@ contract KrionNFT is ERC721, Pausable, AccessControl, ERC721Burnable {
         _grantRole(MINTER_ROLE, msg.sender);
     }
 
-    function withdrawToken() public onlyRole(DEFAULT_ADMIN_ROLE) {
+    function withdrawToken() public {
         tokenAddress.transfer(
             msg.sender,
             tokenAddress.balanceOf(address(this))
         );
+    }
+
+    function sell(address to, uint256 tokenId) public {
+        require(tokenAddress.balanceOf(to) >= rate);
+        tokenAddress.transferFrom(to, msg.sender, rate);
+        transferFrom(msg.sender, to, tokenId);
     }
 
     function pause() public onlyRole(PAUSER_ROLE) {
